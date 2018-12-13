@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using System.Linq;
 
 public class JournalList : MonoBehaviour {
 
@@ -14,35 +15,27 @@ public class JournalList : MonoBehaviour {
 */
     public Button button;
     public GameObject panel;
-    //private string jsonData;
-    private JournalData data;
     private string filename;
     static readonly string JOURNAL_DATA = "TestEntries.json";
 	// Use this for initialization
 	void Start () {
-       // jsonData = JsonUtility.ToJson(data);
 
         filename = Path.Combine(Application.streamingAssetsPath, JOURNAL_DATA);
-
         string jsonFromFile = File.ReadAllText(filename);
-
-        JournalData copy = JsonUtility.FromJson<JournalData>(jsonFromFile);
-
-
-        //Don't touch the stuff above. Variables go here.
+        JournalDataList list = JournalDataList.CreateFromJSON(jsonFromFile);
         if (File.Exists(filename)){
-            Instantiate(button, panel.transform);
-            //button.transform.parent = panel.transform;
-            button.GetComponentInChildren<Text>().text = copy.content;
-            button.GetComponentInChildren<ButtonClick>().index = copy.index;
-            button.GetComponentInChildren<ButtonClick>().content = copy.content;
-            button.GetComponentInChildren<ButtonClick>().journal = copy.journal;
-        } 
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+                Debug.Log("Hello?");
+            for (int i = 0; i < 10; i++){
+                Debug.Log("Am i alive?");
+                button.GetComponentInChildren<Text>().text = list.items[i].content;
+                button.GetComponentInChildren<ButtonClick>().index = list.items[i].index;
+                button.GetComponentInChildren<ButtonClick>().content = list.items[i].content;
+                button.GetComponentInChildren<ButtonClick>().journal = list.items[i].journal;
+                Instantiate(button, panel.transform);
+            }
+
+        }
 	}
 }
+
+

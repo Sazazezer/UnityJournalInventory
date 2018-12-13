@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Bag : MonoBehaviour {
 
-    bool isClosed;
+//    bool isClosed;
     public GameObject bag;
 
-    public void OpenCloseBag() {
+  /*  public void OpenCloseBag() {
         if (isClosed == true)
         {
             bag.SetActive(true);
@@ -17,5 +17,18 @@ public class Bag : MonoBehaviour {
             bag.SetActive(false);
             isClosed = true;
         }
+    }*/
+
+    public void Activate(){
+        Debug.Log("Boobp");
+        bag.GetComponent<Canvas> ().enabled = true;
+
+        
     }
+
+    public void Deactivate(){
+        Debug.Log("Beeb");
+        bag.GetComponent<Canvas> ().enabled = false;
+    }
+
 }

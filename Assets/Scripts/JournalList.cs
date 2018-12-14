@@ -16,9 +16,8 @@ public class JournalList : MonoBehaviour {
     public Button button;
     public GameObject panel;
     private string jsonData;
-   // public GameObject parentPanel;
-   // private GameObject destroyButton;
     private string filename;
+    private int countDammit = 0;
     static readonly string JOURNAL_DATA = "TestEntries.json";
 	// Use this for initialization
 	void Start () {
@@ -27,7 +26,6 @@ public class JournalList : MonoBehaviour {
 	}
 
     public void JournalCompile(){
-        Debug.Log("Recompiling Journal");
         foreach (Transform child in transform) {
             GameObject.Destroy(child.gameObject);
         }
@@ -35,10 +33,10 @@ public class JournalList : MonoBehaviour {
         
         string jsonFromFile = File.ReadAllText(filename);
         JournalDataList list = JournalDataList.CreateFromJSON(jsonFromFile);
-
+        countDammit = list.items.Count();
         if (File.Exists(filename)){
 
-            for (int i = 0; i < 5; i++){ //i should probably fix the counter at some point...
+            for (int i = 0; i < countDammit; i++){
                 if (list.items[i].lockedAway == 1){
                     button.GetComponentInChildren<Text>().text = list.items[i].content;
                     button.GetComponentInChildren<ButtonClick>().index = list.items[i].index;
@@ -48,12 +46,9 @@ public class JournalList : MonoBehaviour {
                 }
             }
         }
-        Debug.Log("Finished Compiling Journal");
-
     }
 
     public void AddNewJournal(int _newIndex){
-        Debug.Log("Starting Pickup");
         string jsonFromFile = File.ReadAllText(filename);
         JournalDataList list = JournalDataList.CreateFromJSON(jsonFromFile);
         int newIndex = _newIndex;
@@ -65,9 +60,29 @@ public class JournalList : MonoBehaviour {
             }
 
             File.WriteAllText(filename, jsonData);
-            Debug.Log("Completed Pickup");
             JournalCompile();
     }
+
+    public void ResetJournals(){
+        string jsonFromFile = File.ReadAllText(filename);
+        JournalDataList list = JournalDataList.CreateFromJSON(jsonFromFile);
+        if (File.Exists(filename)){
+            countDammit = list.items.Count();
+            Debug.Log("Deleting Entires");
+            for (int i = 0; i < countDammit; i++){
+                list.items[i].lockedAway = 0;
+                Debug.Log("Deleted" + i + "Entires");
+                }
+            }
+        jsonData = JsonUtility.ToJson(list);
+            if (File.Exists(filename)){
+                File.Delete(filename);
+            }
+
+            File.WriteAllText(filename, jsonData);
+            JournalCompile();
+    }        
+    
 }
 
 

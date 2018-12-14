@@ -4,36 +4,18 @@ using UnityEngine;
 
 public class PickupJournal : MonoBehaviour {
 
-    private Inventory inventory;
+  //  private Inventory inventory;
     public GameObject itemButton;
     public GameObject effect;
     public string quickDescription;
     public string description;
     public int journalNumber;
-    private void Start()
-    {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
-            // spawn the sun button at the first available inventory slot ! 
-            
-
-          /*  for (int i = 0; i < inventory.items.Length; i++)
-            {
-                if (inventory.items[i] == 0) { // check whether the slot is EMPTY
-                    Instantiate(effect, transform.position, Quaternion.identity);
-                    inventory.items[i] = 1; // makes sure that the slot is now considered FULL
-                    Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
-                    Destroy(gameObject);
-                    break;
-                }
-            }*/
-            Debug.Log("Picking up journal");
             GameObject.FindObjectOfType<JournalList>().AddNewJournal(journalNumber);
-            Debug.Log("Picked up " + journalNumber);
             Destroy(gameObject);
         }
 

@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Fire3")){
+            GameObject.FindObjectOfType<JournalList>().ResetJournals();
             GoToBag();
         }
         if (Input.GetButtonDown("Cancel")){

@@ -46,11 +46,14 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Fire3")){
-            GameObject.FindObjectOfType<JournalList>().ResetJournals();
+
             GoToBag();
         }
         if (Input.GetButtonDown("Cancel")){
             BackToGame();
+        }
+        if (Input.GetButtonDown("Submit")){
+            GameObject.FindObjectOfType<JournalList>().ResetJournals();
         }
 //activates old inventory. Keeping separate for the moment
      /*   if (Input.GetButtonDown("Fire2")){

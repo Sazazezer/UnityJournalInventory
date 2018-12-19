@@ -106,7 +106,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerPos
   m_TagString: PlayerPos
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -390,6 +390,10 @@ MonoBehaviour:
   health: 5
   healthDisplay: {fileID: 0}
   speed: 15
+  bag: {fileID: 0}
+  journal: {fileID: 0}
+  inJournal: 0
+  inBag: 0
 --- !u!114 &114562399498541216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,12 +405,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964aba927b8ca954eb85303a3102bdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: 00000000000000000000000000000000
+  items: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   slots:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  highlightedItem: {fileID: 0}
+  highlightedSlot: 0
+  bag: {fileID: 0}
 --- !u!212 &212067533293676466
 SpriteRenderer:
   m_ObjectHideFlags: 1

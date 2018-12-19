@@ -78,13 +78,13 @@ public class PlayerController : MonoBehaviour {
             BackToGame();
             GameObject.FindObjectOfType<JournalCanvas>().Activate();
             Time.timeScale = 0f;
-            Debug.Log("Into journal");
+        //    Debug.Log("Into journal");
             inJournal = true;
         } else {
             BackToGame();
             GameObject.FindObjectOfType<JournalCanvas>().Deactivate();
             Time.timeScale = 1f;
-            Debug.Log("Leave journal");
+          //  Debug.Log("Leave journal");
             inJournal = false;
         }
 
@@ -95,13 +95,13 @@ public class PlayerController : MonoBehaviour {
             BackToGame();
             GameObject.FindObjectOfType<Bag>().Activate();
             Time.timeScale = 0f;
-            Debug.Log("Into Bag");
+          //  Debug.Log("Into Bag");
             inBag = true;
         } else {
             BackToGame();
             GameObject.FindObjectOfType<Bag>().Deactivate();
             Time.timeScale = 1f;
-            Debug.Log("Leave Bag");
+          //  Debug.Log("Leave Bag");
             inBag = false;
         }
 

@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 1083639883097572, guid: d0cc430a0aadf7341b6f1168d16d0fa4, type: 2}
   effect: {fileID: 1320962406381760, guid: 06168afec4da0964ea6fd6f69f7c8b90, type: 2}
+  instance: {fileID: 0}
+  quickDescription: food
+  description: 
 --- !u!212 &212782432857825486
 SpriteRenderer:
   m_ObjectHideFlags: 1

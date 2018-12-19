@@ -7,6 +7,7 @@ public class Slot : MonoBehaviour {
 
     private Inventory inventory;
     public int index;
+    public string itemName;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Slot : MonoBehaviour {
         if (transform.childCount <= 0) {
             inventory.items[index] = 0;
         }
+     //   Debug.Log(itemName);
     }
 
     public void Cross() {

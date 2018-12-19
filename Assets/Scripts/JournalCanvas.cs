@@ -20,14 +20,14 @@ public class JournalCanvas : MonoBehaviour {
     }
 	
     public void Activate(){
-        Debug.Log("Moop");
+    //    Debug.Log("Moop");
         journal.GetComponent<Canvas> ().enabled = true;
       //  bag.GetComponent<Canvas> ().enabled = false;
         
     }
 
     public void Deactivate(){
-        Debug.Log("Meep");
+    //    Debug.Log("Meep");
         journal.GetComponent<Canvas> ().enabled = false;
       //  bag.GetComponent<Canvas> ().enabled = true;
     }

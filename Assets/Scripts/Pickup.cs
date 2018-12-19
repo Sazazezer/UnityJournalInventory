@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour {
     private Inventory inventory;
     public GameObject itemButton;
     public GameObject effect;
+    public GameObject instance;
     public string quickDescription;
     public string description;
     private void Start()
@@ -25,7 +26,9 @@ public class Pickup : MonoBehaviour {
                 if (inventory.items[i] == 0) { // check whether the slot is EMPTY
                     Instantiate(effect, transform.position, Quaternion.identity);
                     inventory.items[i] = 1; // makes sure that the slot is now considered FULL
-                    Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+                    instance = Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+                    inventory.slots[i].itemName = quickDescription;
+                    instance.GetComponent<SunItem>().slotNumber = i;
                     Destroy(gameObject);
                     break;
                 }

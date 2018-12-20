@@ -102,7 +102,7 @@ MonoBehaviour:
   effect: {fileID: 1320962406381760, guid: 06168afec4da0964ea6fd6f69f7c8b90, type: 2}
   instance: {fileID: 0}
   quickDescription: Sun
-  description: 
+  description: Shiny Happy Sun
 --- !u!212 &212384355803125426
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour {
     public GameObject instance;
     public string quickDescription;
     public string description;
+    //public GameObject itemPicked;
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -28,7 +29,9 @@ public class Pickup : MonoBehaviour {
                     inventory.items[i] = 1; // makes sure that the slot is now considered FULL
                     instance = Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
                     inventory.slots[i].itemName = quickDescription;
-                    instance.GetComponent<SunItem>().slotNumber = i;
+                    inventory.slots[i].itemDescription = description;
+                    inventory.slots[i].itemObject = instance;
+                    instance.GetComponent<Item>().slotNumber = i;
                     Destroy(gameObject);
                     break;
                 }

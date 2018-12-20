@@ -8,6 +8,9 @@ public class Slot : MonoBehaviour {
     private Inventory inventory;
     public int index;
     public string itemName;
+    public string itemDescription;
+    public GameObject itemObject;
+
 
     private void Start()
     {

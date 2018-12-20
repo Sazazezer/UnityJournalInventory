@@ -6,6 +6,7 @@ public class BurnTree : MonoBehaviour {
 
     public int canBurn = 0;
     public GameObject treeInQuestion;
+    public string keyInHand;
 
 	// Use this for initialization
 	void Start () {

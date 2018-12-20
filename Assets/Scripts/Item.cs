@@ -16,10 +16,10 @@ public class Item : MonoBehaviour {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
-    public void Use(string _use) {
+    public void Use(string _use, string _unique) {
         Debug.Log("Boop");
         Instantiate(explosionEffect, player.transform.position, Quaternion.identity);
-        actionObject.GetComponent<ItemAction>().Use(_use);
+        actionObject.GetComponent<ItemAction>().Use(_use, _unique);
         inventory.slots[slotNumber].itemName = "";
         inventory.slots[slotNumber].itemDescription = "";
         Destroy(gameObject);

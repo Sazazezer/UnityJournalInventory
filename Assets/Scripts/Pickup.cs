@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour {
     public GameObject instance;
     public string quickDescription;
     public string description;
+    public string uniqueKey;
     //public GameObject itemPicked;
     private void Start()
     {
@@ -31,6 +32,7 @@ public class Pickup : MonoBehaviour {
                     inventory.slots[i].itemName = quickDescription;
                     inventory.slots[i].itemDescription = description;
                     inventory.slots[i].itemObject = instance;
+                    inventory.slots[i].KeyID = uniqueKey;
                     instance.GetComponent<Item>().slotNumber = i;
                     Destroy(gameObject);
                     break;

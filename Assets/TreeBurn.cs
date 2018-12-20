@@ -6,6 +6,7 @@ public class TreeBurn : MonoBehaviour {
 
     public bool isBurning = false;
     public GameObject player;
+    public string lockNumber;
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +25,12 @@ public class TreeBurn : MonoBehaviour {
 
      private void OnTriggerEnter2D(Collider2D other){
 
-        if (other.tag == "Player" && player.GetComponent<BurnTree>().canBurn > 0){   
-        Debug.Log("Burning");
-            isBurning=true;
+        if (other.tag == "Player" && player.GetComponent<BurnTree>().canBurn > 0){  
+            if (player.GetComponent<BurnTree>().keyInHand == lockNumber){ 
+                Debug.Log("Burning");
+                isBurning=true;
+            }
         }
     }
 }
+        

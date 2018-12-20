@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour {
     public GameObject itemDescriptionPanel;
     public GameObject itemHeld;
     public string itemItem;
+    public string itemUnique;
 
     void Start(){
         highlightedSlot = 0;
@@ -29,12 +30,10 @@ public class Inventory : MonoBehaviour {
        itemDescriptionPanel.GetComponentInChildren<Text>().text = slots[highlightedSlot].itemDescription;
        itemHeld = slots[highlightedSlot].itemObject;
        itemItem = slots[highlightedSlot].itemName.ToString();
+       itemUnique = slots[highlightedSlot].KeyID;
 
         if (bag.GetComponent<Canvas> ().enabled == true){
-            Debug.Log(slots[0].itemName);
-            Debug.Log(slots[1].itemName);
-            Debug.Log(slots[2].itemName);
-            Debug.Log(slots[3].itemName);
+
 
             if(highlightedSlot <= slots.Length-2){
 
@@ -65,7 +64,7 @@ public class Inventory : MonoBehaviour {
             }
 
             if(Input.GetButtonDown("Fire1")){
-                itemHeld.GetComponent<Item>().Use(itemItem);
+                itemHeld.GetComponent<Item>().Use(itemItem, itemUnique);
             }
         }
     }

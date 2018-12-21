@@ -7,6 +7,8 @@ public class BurnTree : MonoBehaviour {
     public int canBurn = 0;
     public GameObject treeInQuestion;
     public string keyInHand;
+    public int itemSlotNumber;
+    public GameObject sunButton;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +17,9 @@ public class BurnTree : MonoBehaviour {
 	
 	// Update is called once per frame
     void Update(){
-                Debug.Log(canBurn);
         if(canBurn > 0){
             canBurn--;
+            Debug.Log(itemSlotNumber);
         }
     }
 

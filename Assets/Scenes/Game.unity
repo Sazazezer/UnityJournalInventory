@@ -423,6 +423,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &170155892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -555,6 +556,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &232601449
 RectTransform:
   m_ObjectHideFlags: 0
@@ -659,6 +661,11 @@ Prefab:
       propertyPath: description
       value: Shiny Happy Sun Key 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114445420681874740, guid: 5aeb03f0a3b959f4dbdebc4439003715,
+        type: 2}
+      propertyPath: indestructable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aeb03f0a3b959f4dbdebc4439003715, type: 2}
   m_IsPrefabParent: 0
@@ -747,6 +754,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!1 &313147577
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,6 +789,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &313147579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -866,6 +875,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!114 &321557032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,7 +980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &399048284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1235,6 +1245,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &489524674
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1394,6 +1405,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &496438611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1552,6 +1564,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &526497134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2207,6 +2220,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &671439541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2932,6 +2946,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!1001 &838491774
 Prefab:
   m_ObjectHideFlags: 0
@@ -3134,6 +3149,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &894917816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3375,6 +3391,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &987583059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4644,6 +4661,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!1 &1278518274 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1401150653791296, guid: 062a34e344e8e0044b162f5e859d4f90,
@@ -4843,6 +4861,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &1295122927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4979,6 +4998,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!1 &1324496551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5498,6 +5518,7 @@ MonoBehaviour:
   itemDescription: 
   KeyID: 
   itemObject: {fileID: 0}
+  itemIndestructible: 0
 --- !u!224 &1670135584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5759,6 +5780,11 @@ Prefab:
         type: 2}
       propertyPath: description
       value: Shiny Happy Sun Key 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445420681874740, guid: 5aeb03f0a3b959f4dbdebc4439003715,
+        type: 2}
+      propertyPath: indestructable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aeb03f0a3b959f4dbdebc4439003715, type: 2}
@@ -6388,6 +6414,11 @@ Prefab:
       propertyPath: description
       value: Shiny Happy Sun Key 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114445420681874740, guid: 5aeb03f0a3b959f4dbdebc4439003715,
+        type: 2}
+      propertyPath: indestructable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5aeb03f0a3b959f4dbdebc4439003715, type: 2}
   m_IsPrefabParent: 0
@@ -6803,6 +6834,7 @@ MonoBehaviour:
   canBurn: 0
   treeInQuestion: {fileID: 0}
   keyInHand: 
+  itemSlotNumber: 0
 --- !u!1 &2114494690
 GameObject:
   m_ObjectHideFlags: 0

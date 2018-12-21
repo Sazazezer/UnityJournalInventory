@@ -19,10 +19,20 @@ public class Item : MonoBehaviour {
     public void Use(string _use, string _unique) {
         Debug.Log("Boop");
         Instantiate(explosionEffect, player.transform.position, Quaternion.identity);
-        actionObject.GetComponent<ItemAction>().Use(_use, _unique);
-        inventory.slots[slotNumber].itemName = "";
-        inventory.slots[slotNumber].itemDescription = "";
-        Destroy(gameObject);
+        actionObject.GetComponent<ItemAction>().Use(_use, _unique, slotNumber);
+        if (inventory.slots[slotNumber].itemIndestructible == false){
+            DestroyItem(slotNumber);
+        }
+
+    }
+
+    public void DestroyItem(int number){
+            inventory.slots[number].itemName = "";
+            inventory.slots[number].itemDescription = "";
+            inventory.slots[number].itemObject = null;
+            inventory.slots[number].KeyID = "";
+            inventory.slots[number].itemIndestructible = false;
+            Destroy(gameObject);
     }
 
 

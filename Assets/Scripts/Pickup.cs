@@ -11,7 +11,8 @@ public class Pickup : MonoBehaviour {
     public string quickDescription;
     public string description;
     public string uniqueKey;
-    //public GameObject itemPicked;
+    public bool indestructable = false;
+
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -33,6 +34,7 @@ public class Pickup : MonoBehaviour {
                     inventory.slots[i].itemDescription = description;
                     inventory.slots[i].itemObject = instance;
                     inventory.slots[i].KeyID = uniqueKey;
+                    inventory.slots[i].itemIndestructible = indestructable;
                     instance.GetComponent<Item>().slotNumber = i;
                     Destroy(gameObject);
                     break;

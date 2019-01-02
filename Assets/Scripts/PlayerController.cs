@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour {
     public Canvas journal;
     public bool inJournal = false;
     public bool inBag = false;
+    public Canvas puzzle;
+    public bool inPuzzle = false;
+
 
     private void Start()
     {
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         bag.GetComponent<Canvas> ().enabled = false;
         journal.GetComponent<Canvas> ().enabled = false;
+        puzzle.GetComponent<Canvas> ().enabled = false;
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class PlayerController : MonoBehaviour {
             anim.SetBool("isRunning", false);
         }
         if (Input.GetButtonDown("Fire2")){
-            GoToJournal();
+            GoToPuzzle();
         }
 
         if (Input.GetButtonDown("Fire3")){
@@ -86,6 +90,21 @@ public class PlayerController : MonoBehaviour {
             Time.timeScale = 1f;
           //  Debug.Log("Leave journal");
             inJournal = false;
+        }
+
+    }
+
+    public void GoToPuzzle() {
+        if (inPuzzle == false){
+            BackToGame();
+            GameObject.FindObjectOfType<PuzzleCanvas>().Activate();
+            Time.timeScale = 0f;
+            inPuzzle = true;
+        } else {
+            BackToGame();
+            GameObject.FindObjectOfType<PuzzleCanvas>().Deactivate();
+            Time.timeScale = 1f;
+            inPuzzle = false;
         }
 
     }

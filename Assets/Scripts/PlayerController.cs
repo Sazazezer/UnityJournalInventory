@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour {
     public Canvas journal;
     public bool inJournal = false;
     public bool inBag = false;
-    public Canvas puzzle;
+//   public Canvas puzzle;
+    public GameObject puzzle;
     public bool inPuzzle = false;
 
 
@@ -97,12 +98,14 @@ public class PlayerController : MonoBehaviour {
     public void GoToPuzzle() {
         if (inPuzzle == false){
             BackToGame();
-            GameObject.FindObjectOfType<PuzzleCanvas>().Activate();
+            //GameObject.FindObjectOfType<PuzzleCanvas>().Activate();
+            //puzzle.Activate();
             Time.timeScale = 0f;
             inPuzzle = true;
         } else {
             BackToGame();
-            GameObject.FindObjectOfType<PuzzleCanvas>().Deactivate();
+            //GameObject.FindObjectOfType<PuzzleCanvas>().Deactivate();
+            //puzzle.Deactivate();
             Time.timeScale = 1f;
             inPuzzle = false;
         }
@@ -133,4 +136,8 @@ public class PlayerController : MonoBehaviour {
         inBag = false;
         Time.timeScale = 1f; 
     }
+
+   /* public void SetPuzzleCanvas(){
+        puzzle = GameObject.FindObjectOfType<Canvas>();
+    }*/
 }

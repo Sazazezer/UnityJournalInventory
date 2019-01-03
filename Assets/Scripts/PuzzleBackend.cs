@@ -9,17 +9,12 @@ public class PuzzleBackend : MonoBehaviour {
     public int maxDigits;
     public bool maxDigitedSet = true;
     public int totalDigits = 10;
+    public GameObject linkedObject;
     
 
     // Use this for initialization
     void Start () {
-        if (maxDigitedSet == true){
-            maxDigits = puzzleAnswer.Length; 
-        } else {
-            maxDigits = totalDigits;
-        }
-        
-        Debug.Log(maxDigits);
+        GetMaxDigits();
     }
     
     // Update is called once per frame
@@ -44,11 +39,26 @@ public class PuzzleBackend : MonoBehaviour {
 
     public void SubmitGuess(){
         if (puzzleGuess == puzzleAnswer){
-            Debug.Log("Yay.Correct.");
-            ClearGuess();
+            Success();
         } else {
             Debug.Log("Boo. Incorrect.");
             ClearGuess();
         }
+    }
+
+    public void GetMaxDigits(){
+        if (maxDigitedSet == true){
+            maxDigits = puzzleAnswer.Length; 
+        } else {
+            maxDigits = totalDigits;
+        }
+        
+        Debug.Log(maxDigits);      
+    }
+
+    public void Success(){
+        Debug.Log("Yay.Correct.");
+        ClearGuess();
+        linkedObject.GetComponent<Door>().PuzzleUnlock();      
     }
 }

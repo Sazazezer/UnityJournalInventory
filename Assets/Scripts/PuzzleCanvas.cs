@@ -22,6 +22,7 @@ public class PuzzleCanvas : MonoBehaviour {
     public void Activate(){
     //    Debug.Log("Moop");
         puzzle.GetComponent<Canvas> ().enabled = true;
+        Time.timeScale = 0f;
       //  bag.GetComponent<Canvas> ().enabled = false;
         
     }
@@ -29,6 +30,7 @@ public class PuzzleCanvas : MonoBehaviour {
     public void Deactivate(){
     //    Debug.Log("Meep");
         puzzle.GetComponent<Canvas> ().enabled = false;
+        Time.timeScale = 1f;
       //  bag.GetComponent<Canvas> ().enabled = true;
     }
 }

@@ -100,13 +100,13 @@ public class PlayerController : MonoBehaviour {
             BackToGame();
             //GameObject.FindObjectOfType<PuzzleCanvas>().Activate();
             //puzzle.Activate();
-            Time.timeScale = 0f;
+           // Time.timeScale = 0f;
             inPuzzle = true;
         } else {
             BackToGame();
             //GameObject.FindObjectOfType<PuzzleCanvas>().Deactivate();
             //puzzle.Deactivate();
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             inPuzzle = false;
         }
 

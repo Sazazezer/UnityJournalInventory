@@ -82,8 +82,7 @@ MonoBehaviour:
   doorMaxDigitedSet: 1
   doorTotalDigits: 10
   player: {fileID: 0}
-  puzzlePrefab: {fileID: 1464503214664440, guid: c3db66b66006d0f44a217a18e73fe54f,
-    type: 2}
+  puzzlePrefab: {fileID: 0}
   puzzle: {fileID: 0}
   canvas: {fileID: 0}
 --- !u!212 &212821630478484002

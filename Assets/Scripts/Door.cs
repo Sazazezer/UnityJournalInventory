@@ -29,15 +29,15 @@ public class Door : MonoBehaviour {
         puzzle = Instantiate(puzzlePrefab,canvas.transform);
         player.GetComponent<PlayerController>().puzzle = puzzle;
         puzzle.GetComponent<PuzzleCanvas>().Activate();
-        player.GetComponent<PlayerController>().GoToPuzzle();
+      //  player.GetComponent<PlayerController>().GoToPuzzle();
         puzzle.GetComponent<PuzzleBackend>().puzzleAnswer = doorAnswer;
         puzzle.GetComponent<PuzzleBackend>().GetMaxDigits();
         puzzle.GetComponent<PuzzleBackend>().linkedObject = gameObject;
     }
 
     public void PuzzleUnlock () {
-        player.GetComponent<PlayerController>().GoToPuzzle();
         puzzle.GetComponent<PuzzleCanvas>().Deactivate();
+     //   player.GetComponent<PlayerController>().GoToPuzzle();
         Destroy(gameObject);
     }
 }

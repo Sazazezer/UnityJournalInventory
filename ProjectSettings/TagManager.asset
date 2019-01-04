@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerPos
   - Tree
+  - PuzzleScreen
   layers:
   - Default
   - TransparentFX

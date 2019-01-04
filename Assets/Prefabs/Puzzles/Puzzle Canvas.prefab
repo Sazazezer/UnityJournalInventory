@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 114555666066085774}
   m_Layer: 5
   m_Name: Puzzle Canvas
-  m_TagString: Untagged
+  m_TagString: PuzzleScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1134,6 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 223080409707145826}
+  firstSelected: {fileID: 0}
 --- !u!222 &222122396221233838
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1369,16 +1370,16 @@ RectTransform:
   m_GameObject: {fileID: 1899515543549834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000142, y: 1.0000142, z: 1.0000142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224107544091850472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -0.00012207031}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.000061035156}
+  m_SizeDelta: {x: -0.000061035156, y: 0.00012207031}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224671574922483392
 RectTransform:

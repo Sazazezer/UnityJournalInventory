@@ -2,35 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PuzzleCanvas : MonoBehaviour {
 
-//    public int isActive = 0;
     public Canvas puzzle;
-//    public Canvas bag;
-//    public Text journalText;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-    void Update(){
-      //  journalText.text = "This is a test. It has passed. YAY.";
-    }
+    public GameObject firstSelected;
 	
     public void Activate(){
-    //    Debug.Log("Moop");
-        puzzle.GetComponent<Canvas> ().enabled = true;
         Time.timeScale = 0f;
-      //  bag.GetComponent<Canvas> ().enabled = false;
-        
+        puzzle.GetComponent<Canvas> ().enabled = true;    
     }
 
     public void Deactivate(){
-    //    Debug.Log("Meep");
         puzzle.GetComponent<Canvas> ().enabled = false;
+        Destroy(gameObject);
         Time.timeScale = 1f;
-      //  bag.GetComponent<Canvas> ().enabled = true;
     }
 }

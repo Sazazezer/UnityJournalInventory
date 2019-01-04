@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212821630478484002}
   - component: {fileID: 61994989517533898}
   - component: {fileID: 114150924385875786}
+  - component: {fileID: 114830297036704020}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -81,10 +82,22 @@ MonoBehaviour:
   doorAnswer: 0
   doorMaxDigitedSet: 1
   doorTotalDigits: 10
+  doorIndex: 0
   player: {fileID: 0}
   puzzlePrefab: {fileID: 0}
   puzzle: {fileID: 0}
   canvas: {fileID: 0}
+--- !u!114 &114830297036704020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204652107896732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9846dd1b8adf5064394d9fbc9d18affe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212821630478484002
 SpriteRenderer:
   m_ObjectHideFlags: 1

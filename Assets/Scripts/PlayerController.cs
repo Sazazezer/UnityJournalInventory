@@ -47,30 +47,19 @@ public class PlayerController : MonoBehaviour {
             anim.SetBool("isRunning", false);
         }
         if (Input.GetButtonDown("Fire2")){
-            GoToPuzzle();
+                GoToJournal();                    
         }
 
         if (Input.GetButtonDown("Fire3")){
-
-            GoToBag();
+                GoToBag();            
         }
         if (Input.GetButtonDown("Cancel")){
             BackToGame();
         }
         if (Input.GetButtonDown("Submit")){
             GameObject.FindObjectOfType<JournalList>().ResetJournals();
+            GameObject.FindObjectOfType<DoorList>().ResetDoors();
         }
-//activates old inventory. Keeping separate for the moment
-     /*   if (Input.GetButtonDown("Fire2")){
-            if (bag.GetComponent<Canvas> ().enabled == false){
-                bag.GetComponent<Canvas> ().enabled = true;
-                Time.timeScale = 0f;
-
-                } else {
-                    bag.GetComponent<Canvas> ().enabled = false;
-                    Time.timeScale = 1f;
-                }
-        }*/
     }
 
     private void FixedUpdate()
@@ -81,6 +70,7 @@ public class PlayerController : MonoBehaviour {
     public void GoToJournal() {
         if (inJournal == false){
             BackToGame();
+            Destroy(GameObject.FindGameObjectWithTag("PuzzleScreen"));
             GameObject.FindObjectOfType<JournalCanvas>().Activate();
             Time.timeScale = 0f;
         //    Debug.Log("Into journal");
@@ -98,15 +88,9 @@ public class PlayerController : MonoBehaviour {
     public void GoToPuzzle() {
         if (inPuzzle == false){
             BackToGame();
-            //GameObject.FindObjectOfType<PuzzleCanvas>().Activate();
-            //puzzle.Activate();
-           // Time.timeScale = 0f;
             inPuzzle = true;
         } else {
             BackToGame();
-            //GameObject.FindObjectOfType<PuzzleCanvas>().Deactivate();
-            //puzzle.Deactivate();
-            //Time.timeScale = 1f;
             inPuzzle = false;
         }
 
@@ -115,15 +99,14 @@ public class PlayerController : MonoBehaviour {
     public void GoToBag() {
         if (inBag == false){
             BackToGame();
+            Destroy(GameObject.FindGameObjectWithTag("PuzzleScreen"));
             GameObject.FindObjectOfType<Bag>().Activate();
             Time.timeScale = 0f;
-          //  Debug.Log("Into Bag");
             inBag = true;
         } else {
             BackToGame();
             GameObject.FindObjectOfType<Bag>().Deactivate();
             Time.timeScale = 1f;
-          //  Debug.Log("Leave Bag");
             inBag = false;
         }
 

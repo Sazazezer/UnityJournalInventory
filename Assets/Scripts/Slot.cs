@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour {
     public int index;
     public string itemName;
     public string itemDescription;
-    public string KeyID;
+    public int KeyID;
     public GameObject itemObject;
     public bool itemIndestructible;
 

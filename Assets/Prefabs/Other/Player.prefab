@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 114302048561051068}
   - component: {fileID: 114562399498541216}
   - component: {fileID: 50342519744033012}
+  - component: {fileID: 114893609336495058}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -394,6 +395,8 @@ MonoBehaviour:
   journal: {fileID: 0}
   inJournal: 0
   inBag: 0
+  puzzle: {fileID: 0}
+  inPuzzle: 0
 --- !u!114 &114562399498541216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,6 +429,27 @@ MonoBehaviour:
   highlightedItem: {fileID: 0}
   highlightedSlot: 0
   bag: {fileID: 0}
+  itemTitlePanel: {fileID: 0}
+  itemDescriptionPanel: {fileID: 0}
+  itemHeld: {fileID: 0}
+  itemItem: 
+  itemUnique: 0
+--- !u!114 &114893609336495058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1242267839166694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f31ad9231cfbed419c3064b4642e23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBurn: 0
+  treeInQuestion: {fileID: 0}
+  keyInHand: 0
+  itemSlotNumber: 0
+  sunButton: {fileID: 0}
 --- !u!212 &212067533293676466
 SpriteRenderer:
   m_ObjectHideFlags: 1

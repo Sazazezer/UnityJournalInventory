@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Submit")){
             GameObject.FindObjectOfType<JournalList>().ResetJournals();
             GameObject.FindObjectOfType<DoorList>().ResetDoors();
+            GameObject.FindObjectOfType<ItemList>().ResetItems();
         }
     }
 

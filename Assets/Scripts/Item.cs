@@ -17,7 +17,7 @@ public class Item : MonoBehaviour {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
-    public void Use(string _use, string _unique) {
+    public void Use(string _use, int _unique) {
         Debug.Log("Boop");
         Instantiate(explosionEffect, player.transform.position, Quaternion.identity);
         actionObject.GetComponent<ItemAction>().Use(_use, _unique, slotNumber);
@@ -31,7 +31,7 @@ public class Item : MonoBehaviour {
             inventory.slots[number].itemName = "";
             inventory.slots[number].itemDescription = "";
             inventory.slots[number].itemObject = null;
-            inventory.slots[number].KeyID = "";
+            inventory.slots[number].KeyID = 9999;
             inventory.slots[number].itemIndestructible = false;
             Destroy(gameObject);
     }

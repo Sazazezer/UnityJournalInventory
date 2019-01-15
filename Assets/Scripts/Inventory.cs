@@ -16,13 +16,19 @@ public class Inventory : MonoBehaviour {
     public GameObject itemDescriptionPanel;
     public GameObject itemHeld;
     public string itemItem;
-    public string itemUnique;
+    public int itemUnique;
+
+        private string jsonData;
+    
+    public static Inventory CreateFromJSON(string jsonString)
+        {
+            return JsonUtility.FromJson<Inventory>(jsonString);
+        }
 
     void Start(){
         highlightedSlot = 0;
         
     }
-    
 
     void Update(){
 

@@ -6,7 +6,7 @@ public class BurnTree : MonoBehaviour {
 
     public int canBurn = 0;
     public GameObject treeInQuestion;
-    public string keyInHand;
+    public int keyInHand;
     public int itemSlotNumber;
     public GameObject sunButton;
 

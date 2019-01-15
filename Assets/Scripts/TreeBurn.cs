@@ -6,7 +6,7 @@ public class TreeBurn : MonoBehaviour {
 
     public bool isBurning = false;
     public GameObject player;
-    public string lockNumber;
+    public int lockNumber;
     public GameObject itemKill;
 
 

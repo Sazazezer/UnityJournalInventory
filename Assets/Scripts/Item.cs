@@ -8,6 +8,7 @@ public class Item : MonoBehaviour {
     private Inventory inventory;
     public GameObject explosionEffect;
     public int slotNumber;
+
     public GameObject actionObject;
 
     private void Start()
@@ -34,6 +35,7 @@ public class Item : MonoBehaviour {
             inventory.slots[number].itemIndestructible = false;
             Destroy(gameObject);
     }
+
 
 
 }

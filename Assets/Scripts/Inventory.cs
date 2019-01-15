@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class Inventory : MonoBehaviour {
 
 
@@ -26,11 +27,11 @@ public class Inventory : MonoBehaviour {
     void Update(){
 
         highlightedItem.transform.position =  slots[highlightedSlot].transform.position;
-       itemTitlePanel.GetComponentInChildren<Text>().text = slots[highlightedSlot].itemName;
-       itemDescriptionPanel.GetComponentInChildren<Text>().text = slots[highlightedSlot].itemDescription;
-       itemHeld = slots[highlightedSlot].itemObject;
-       itemItem = slots[highlightedSlot].itemName.ToString();
-       itemUnique = slots[highlightedSlot].KeyID;
+        itemTitlePanel.GetComponentInChildren<Text>().text = slots[highlightedSlot].itemName;
+        itemDescriptionPanel.GetComponentInChildren<Text>().text = slots[highlightedSlot].itemDescription;
+        itemHeld = slots[highlightedSlot].itemObject;
+        itemItem = slots[highlightedSlot].itemName.ToString();
+        itemUnique = slots[highlightedSlot].KeyID;
 
         if (bag.GetComponent<Canvas> ().enabled == true){
 

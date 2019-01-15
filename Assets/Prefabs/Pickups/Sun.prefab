@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 212430309204672892}
   - component: {fileID: 58377329386605798}
   - component: {fileID: 114445420681874740}
+  - component: {fileID: 114968340585468058}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -103,6 +104,20 @@ MonoBehaviour:
   instance: {fileID: 0}
   quickDescription: Sun
   description: Shiny Happy Sun
+  uniqueKey: 
+  itemIndex: 0
+  indestructable: 0
+--- !u!114 &114968340585468058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1972283162918958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d7edcaa9abbaa4690966602ce8fa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212384355803125426
 SpriteRenderer:
   m_ObjectHideFlags: 1

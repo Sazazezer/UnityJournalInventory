@@ -18,7 +18,7 @@ public class JournalList : MonoBehaviour {
     private string jsonData;
     private string filename;
     private int countDammit = 0;
-    static readonly string JOURNAL_DATA = "TestEntries.json";
+    static readonly string JOURNAL_DATA = "JournalEntries.json";
 	// Use this for initialization
 	void Start () {
         filename = Path.Combine(Application.streamingAssetsPath, JOURNAL_DATA);

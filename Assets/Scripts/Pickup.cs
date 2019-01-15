@@ -10,7 +10,8 @@ public class Pickup : MonoBehaviour {
     public GameObject instance;
     public string quickDescription;
     public string description;
-    public string uniqueKey;
+  //  public string uniqueKey;
+    public int itemIndex;
     public bool indestructable = false;
 
     private void Start()
@@ -22,8 +23,16 @@ public class Pickup : MonoBehaviour {
     {
         if (other.CompareTag("Player")) {
             // spawn the sun button at the first available inventory slot ! 
-            
+            ItemPicked();
+            AddToInventory();
+        }   
+    }
 
+    public void ItemPicked(){
+        this.GetComponent<ItemList>().SavePickup(itemIndex);
+    }
+
+    public void AddToInventory(){
             for (int i = 0; i < inventory.items.Length; i++)
             {
                 if (inventory.items[i] == 0) { // check whether the slot is EMPTY
@@ -33,14 +42,13 @@ public class Pickup : MonoBehaviour {
                     inventory.slots[i].itemName = quickDescription;
                     inventory.slots[i].itemDescription = description;
                     inventory.slots[i].itemObject = instance;
-                    inventory.slots[i].KeyID = uniqueKey;
+                    inventory.slots[i].KeyID = itemIndex;
                     inventory.slots[i].itemIndestructible = indestructable;
                     instance.GetComponent<Item>().slotNumber = i;
                     Destroy(gameObject);
                     break;
                 }
             }
-        }
-        
+
     }
 }

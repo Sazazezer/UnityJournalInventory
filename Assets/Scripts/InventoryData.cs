@@ -11,6 +11,7 @@ using UnityEngine;
         public string itemDescription;
         public int KeyID;
         public bool itemIndestructible;
+        public string prefabName;
  
         public static InventoryData CreateFromJSON(string jsonString)
         {

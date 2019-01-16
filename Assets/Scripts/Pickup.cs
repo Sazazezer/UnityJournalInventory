@@ -13,6 +13,7 @@ public class Pickup : MonoBehaviour {
   //  public string uniqueKey;
     public int itemIndex;
     public bool indestructable = false;
+    public string prefabName;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class Pickup : MonoBehaviour {
                     inventory.slots[i].itemObject = instance;
                     inventory.slots[i].KeyID = itemIndex;
                     inventory.slots[i].itemIndestructible = indestructable;
+                    inventory.slots[i].prefabName = prefabName;
                     instance.GetComponent<Item>().slotNumber = i;
                     Destroy(gameObject);
                     break;

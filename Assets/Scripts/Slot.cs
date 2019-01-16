@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour {
     public int KeyID;
     public GameObject itemObject;
     public bool itemIndestructible;
+    public string prefabName;
 
 
     private void Start()

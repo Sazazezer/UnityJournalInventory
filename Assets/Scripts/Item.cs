@@ -33,6 +33,7 @@ public class Item : MonoBehaviour {
             inventory.slots[number].itemObject = null;
             inventory.slots[number].KeyID = 9999;
             inventory.slots[number].itemIndestructible = false;
+            inventory.slots[number].prefabName = "";
             Destroy(gameObject);
     }
 

@@ -16,7 +16,12 @@ public class InventoryList : MonoBehaviour {
     private Inventory inventory;
     private string jsonData;
     private string filename;
-    private int countDammit = 0;
+
+    public string itemName;
+    public string itemDescription;
+    public string KeyID;
+    public string itemIndestructible;
+
     static readonly string INVENTORY_DATA = "InventoryEntries.json";
 	// Use this for initialization
 	void Start () {
@@ -29,6 +34,31 @@ public class InventoryList : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.F1)){
             Debug.Log("hi there;lk;l");
+        string jsonFromFile = File.ReadAllText(filename);
+        Debug.Log(jsonFromFile);
+        InventoryDataList list = InventoryDataList.CreateFromJSON(jsonFromFile);
+        Debug.Log(list);
+        for (int i = 0; i < inventory.slots.Count(); i++){
+            list.items[i].itemName = inventory.slots[i].itemName;
+            list.items[i].itemDescription = inventory.slots[i].itemDescription;
+            list.items[i].KeyID = inventory.slots[i].KeyID;
+            list.items[i].itemIndestructible = inventory.slots[i].itemIndestructible;
+
+        }
+
+        jsonData = JsonUtility.ToJson(list);
+        Debug.Log(jsonData);
+
+            if (File.Exists(filename)){
+                File.Delete(filename);
+            }
+
+            File.WriteAllText(filename, jsonData);
+            Debug.Log("hi there");
+
+
+
+          /*  Debug.Log("hi there;lk;l");
 
             for (var i = 0; i < inventory.slots.Count() ; i++){
                 jsonData += JsonUtility.ToJson(inventory.slots[i]) + " , "; 
@@ -40,7 +70,29 @@ public class InventoryList : MonoBehaviour {
             }
 
             File.WriteAllText(filename, jsonData);
-            Debug.Log("hi there");
+            Debug.Log("hi there");*/
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2)){
+            string jsonFromFile = File.ReadAllText(filename);
+            InventoryDataList list = InventoryDataList.CreateFromJSON(jsonFromFile);
+        if (File.Exists(filename)){
+            for (int j = 0; j < inventory.slots.Count(); j++){
+             if (inventory.slots[j].KeyID != 0){
+                inventory.items[j] = 1; // makes sure that the slot is now considered FULL
+             }
+             
+             //   instance = Instantiate(itemButton, inventory.slots[i].transform, false); // spawn the button so that the player can interact with it
+                inventory.slots[j].itemName = list.items[j].itemName;
+                inventory.slots[j].itemDescription = list.items[j].itemDescription;
+                Instantiate(new GameObject(Resources.Load<GameObject>(list.items[j].itemName)), inventory.slots[j].transform, false);
+            //    inventory.slots[i].itemObject = list.instance[i];
+                inventory.slots[j].KeyID = list.items[j].KeyID;
+                inventory.slots[j].itemIndestructible = list.items[j].itemIndestructible;
+             //   instance.GetComponent<Item>().slotNumber = i;
+            }
+        }
+
         }
     }
 }

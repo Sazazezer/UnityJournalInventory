@@ -5,7 +5,7 @@ using System.Collections.Generic;
     [System.Serializable]
     public class InventoryDataList
     {
-        public Inventory[] items;
+        public InventoryData[] items;
  
         public static InventoryDataList CreateFromJSON(string jsonString)
         {

@@ -85,6 +85,7 @@ public class InventoryList : MonoBehaviour {
             //    inventory.slots[i].itemObject = list.instance[i];
                 inventory.slots[j].KeyID = list.items[j].KeyID;
                 inventory.slots[j].itemIndestructible = list.items[j].itemIndestructible;
+                inventory.slots[j].prefabName = list.items[j].prefabName;
              //   instance.GetComponent<Item>().slotNumber = i;
                 }               
             }
